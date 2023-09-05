@@ -7,6 +7,7 @@ module.exports = {
 
     indexCreate: (req, res) => {
         const errors = validationResult(req)
+        /* return res.send(errors.mapped()) *///me devuelve un objeto con la propiedadades para utilizar como si fuera un metodo que tiene el nombre del atrib name="" en los forms
         if (errors.isEmpty()) {
             const name = req.body.name
             const email = req.body.email
@@ -19,8 +20,11 @@ module.exports = {
                 age,
                 color
             }
+            
         } else {
-            res.render('index')
+            return res.render('index', {
+                errors: errors.mapped()
+            })
         }
     }
 }
