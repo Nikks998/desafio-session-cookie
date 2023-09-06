@@ -26,7 +26,8 @@
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label for="email" class="form-label">Ingrese su email</label>
-              <input type="email" class="form-control" id="email" name="email">
+              <input type="email" class="form-control <%= locals.errors && (errors.email && 'is-invalid') %>" id="email" name="email">
+              <small class="text-danger ms-2"><%= locals.errors && (errors.email && errors.email.msg) %></small>
             </div>
             <div class="col-12 col-md-6 mb-3">
               <label for="age" class="form-label">Ingrese su edad</label>

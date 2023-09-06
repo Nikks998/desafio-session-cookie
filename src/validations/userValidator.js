@@ -7,7 +7,7 @@ module.exports = [
     check('email')
     .notEmpty()
     .withMessage('El email es obligatorio'),
-    check('age')
+    check('color')
     .notEmpty()
-    .withMessage('La edad es obligatoria')
+    .withMessage('debe seleccionar un color')
 ]
