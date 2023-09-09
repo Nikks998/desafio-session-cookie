@@ -23,7 +23,8 @@ module.exports = {
             
         } else {
             return res.render('index', {
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                old: req.body
             })
         }
     }
